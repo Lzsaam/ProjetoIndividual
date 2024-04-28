@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z QUIZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<body>
+    
+    <div class="start_btn"><button>Começar o Quiz</button></div>
+
+    <div class="info_box">
+        <div class="info-title"><span>Algumas regras deste Quiz</span></div>
+        <div class="info-list">
+            <div class="info">1. Você terá apenas <span>15 segundos</span> para cada pergunta.</div>
+            <div class="info">2. Uma vez que você selecionar sua resposta, não poderá desfazê-la.</div>
+            <div class="info">3. Você não pode selecionar nenhuma opção após o término do tempo.</div>
+            <div class="info">4. Você não pode sair do Quiz enquanto estiver jogando.</div>
+            <div class="info">5. Você receberá pontos com base em suas respostas corretas.</div>
+        </div>
+        
+        <div class="buttons">
+            <button class="quit">Sair do Quiz</button>
+            <button class="restart">Continuar</button>
+        </div>
+    </div>
+
+   
+    <div class="quiz_box">
+        <header>
+            <div class="title">Dragon Ball Quiz</div>
+            <div style="text-align: center;">
+                <p style="padding-bottom: 10px;" id="waqt"></p>
+                <p id="din"></p>
+            </div>
+            <div class="timer">
+                <div class="time_left_txt">Tempo restante</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                
+            </div>
+            <div class="option_list">
+             
+            </div>
+        </section>
+
+      
+        <footer>
+            <div class="total_que">
+              
+            </div>
+            <button class="next_btn">Proxima Questão</button>
+        </footer>
+    </div>
+
+  
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">Você completou o Quiz!</div>
+        <div class="score_text">
+           
+        </div>
+        <div class="buttons">
+            <button class="restart">Refazer o Quiz</button>
+            <button class="quit">Sair do Quiz</button>
+        </div>
+    </div>
+
+
+    <script src="questions.js"></script>
+
+   
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
+</html>
