@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/298008b39c.js" crossorigin="anonymous"></script>
     <title>Projeto Individual</title>
 </head>
 
@@ -14,8 +15,8 @@
         <nav class="navbar">
             <a href="#">Home</a>
             <a href="#about">Sobre o jogo</a>
-            <a href="#">Conheça os Agentes</a>
-            <a href="#">Conheça os Mapas</a>
+            <a href="#agents">Conheça os Agentes</a>
+            <a href="#maps">Conheça os Mapas</a>
         </nav>
         <button class="button login">
             <span class="btn-txt">LOGIN</span>
@@ -71,7 +72,7 @@
         </div>
     </section>
 
-    <section class="section_agents">
+    <section id="agents" class="section_agents">
         <div class="agents_left">
             <img src="assets/agentes.png" alt="">
         </div>
@@ -101,7 +102,7 @@
         </div>
 
     </section>
-    <section class="section_maps">
+    <section id="maps" class="section_maps">
         <div class="maps_left">
             <span class="text"> 
                 <h1>CONHEÇA OS MAPAS</h1>
@@ -119,11 +120,41 @@
         <div class="maps_right">
             <img src="assets/mapas.jpg" alt="">
         </div>
-            
-
-
     </section>
-
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Sobre Nós</h4>
+                <p>Informações sobre a empresa ou o projeto.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre o Jogo</a></li>
+                    <li><a href="#agents">Conheça os Agentes</a></li>
+                    <li><a href="#maps">Conheça os Mapas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>Email: samuel.lima@sptech.school</p>
+                <p>Telefone: (11) 95147-9566</p>
+            </div>
+            <div class="footer-section">
+                <h4>Sigam-me</h4>
+                <div class="social-icons">              
+                   
+                    <i class="fa-brands fa-instagram fa-2xl " style=" color: #ff4655; margin-top: 20px;"></i>
+                    <i class="fa-brands fa-github fa-2xl" style=" color: #ff4655; margin-top: 20px;"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
 
 </html>
