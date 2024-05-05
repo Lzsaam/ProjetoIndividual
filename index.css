@@ -410,6 +410,7 @@ body {
     width: 100%;
     border-top: 2px solid var(--red-valorant); 
     margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   .maps_left {
@@ -497,4 +498,16 @@ body {
  .maps:hover::after {
    visibility: visible;
    transform: scale(100) translateX(2px);
+ }
+
+ .maps_right {
+  display: flex;
+  width: 50%;
+ }
+
+ .maps_right img {
+  margin-left: 45px;
+  width: 90%;
+  margin-top: 68px;
+  border: 2px solid var(--red-valorant); 
  }
