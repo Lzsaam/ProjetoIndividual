@@ -301,8 +301,8 @@ body {
 }
 
 .agents_left img {
-  width: 100%;
-
+  width: 90%;
+  margin-top: 200px;
 }
 
 
@@ -332,6 +332,18 @@ body {
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 30px;
+}
+
+.agents_right .text h2{
+  font-family: font_valorant;
+  color: var(--red-valorant);
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+
+.agents_right .text p{
+  font-size: 20px;
 }
 
 .button_agents{
