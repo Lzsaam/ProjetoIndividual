@@ -152,6 +152,11 @@ img {
   justify-content: center;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--red-valorant); /* Mude a cor aqui */
+}
+
 @media (max-width: 450px) {
   .swiper {
     height: 270px;
