@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/298008b39c.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Login</title>
+
 </head>
 
 <body>
@@ -20,6 +21,18 @@
             <a href="../html/index.html#maps">Conheça os Mapas</a>
         </nav>
     </header>
+    <div id="cardAparecer" style="display: none;" class="card">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="card-inner">
+            <h1>Lembre-se:</h1>
+            <p id="email_div"></p>
+            <br>
+            <p id="senha_div"></p>
+            <br>
+            <p id="confirmacao_div"></p>
+        </div>
+    </div>
 
     <div class="wrapper">
         <span class="bg-animate"></span>
@@ -38,7 +51,7 @@
                     <label>Senha</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
-                <button type="submit" class="btn animation" animation style="--i:3; --j:24;">Login</button>
+                <button type="submit"  class="btn animation" animation style="--i:3; --j:24;">Login</button>
                 <div class="logreg-link animation" style="--i:4; --j:25;">
                     <p>Você não tem conta ainda ?<a href="#" class="register-link">Cadastra-se</a> </p>
                 </div>
@@ -46,40 +59,124 @@
         </div>
         <div class="info-text login">
             <h2 class="animation" style="--i:0; --j:20;">BEM VINDO DE VOLTA!</h2>
-            <p class="animation" style="--i:1; --j:21;">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+            <p class="animation" style="--i:1; --j:21;">Ao Universo valorant</p>
         </div>
 
         <div  class="form-box register">
             <h2 class="animation" style="--i:17; --j:0">Cadastra-se</h2>
             <form action="#">
                 <div class="input-box animation" style="--i:18; --j:1"> 
-                    <input type="text" required>
+                    <input id="input_nome_register" type="text" required oninput="verificaCampos()" onkeyup="validarDiv()" oninvalid="validarCampo(this, 'Por favor, preencha o seu nome.')">
                     <label>Nome</label>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box animation " style="--i:19;--j:2">
-                    <input type="text" required>
+                    <input id="input_email_register" onkeyup="validarDiv()" type="email" required>
                     <label>Email</label>
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box animation" style="--i:20; --j:3">
-                    <input type="password" required>
+                    <input id="input_senha_register" type="password" required oninput="verificaCampos()" onkeyup="validarDiv()" oninvalid="validarCampo(this, 'Por favor, preencha a sua senha.')">
                     <label>Senha</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
+                <div class="input-box animation" style="--i:20; --j:3">
+                    <input id="input_confirma_senha" type="password" required oninput="verificaCampos()" onkeyup="validarDiv()" oninvalid="validarCampo(this, 'Por favor, confirme a sua senha.')">
+                    <label> Confirme a Sua Senha</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+
+
                 <button type="submit" class="btn animation" style="--i:21; --j:4">Cadastrar
                 </button>
                 <div class="logreg-link animation" style="--i:22; --j:5">
-                    <p>Você já possui uma conta ? <a href="#" class="login-link">Login</a> </p>
+                    <p>Você já possui uma conta ? <a href="#"   class="login-link"><span onclick="sumirDiv()">Login</span></a> </p>
                 </div>
             </form>
         </div>
         <div id="register" class="info-text register">
             <h2 class="animation" style="--i:17; --j:0">BEM VINDO!</h2>
-            <p class="animation" style="--i:18; --j:1">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+            <p class="animation" style="--i:18; --j:1">Ao Universo valorant</p>
         </div>
     </div>
     <script src="../login.js"></script>
 </body>
 
+
 </html>
+<script>
+    function validarCampo(campo, mensagem) {
+    if (campo.value === "") {
+        campo.setCustomValidity(mensagem);
+    } else {
+        campo.setCustomValidity("");
+    }
+}
+function verificaCampos() {
+    var nome = document.getElementById("input_nome_register");
+    var senha = document.getElementById("input_senha_register");
+    var confirmaSenha = document.getElementById("input_confirma_senha");
+
+    validarCampo(nome, "Por favor, preencha o seu nome.");
+    validarCampo(senha, "Por favor, preencha a sua senha.");
+    validarCampo(confirmaSenha, "Por favor, confirme a sua senha.");
+    verificarSenhas();
+}
+function verificarSenhas() {
+    var senha = document.getElementById("input_senha_register");
+    var confirmaSenha = document.getElementById("input_confirma_senha");
+
+    if (confirmaSenha.value !== senha.value) {
+        confirmaSenha.setCustomValidity("As senhas não coincidem.");
+    } else {
+        confirmaSenha.setCustomValidity("");
+    }
+}
+document.getElementById("input_senha_register").addEventListener("input", verificarSenhas);
+document.getElementById("input_confirma_senha").addEventListener("input", verificarSenhas);
+
+function validarDiv(){
+    let aparecerCard = document.getElementById("cardAparecer")
+    const nomeConfirmada = input_nome_register.value
+    const emailConfirmada = input_email_register.value
+    const senhaConfirmada = input_senha_register.value
+    const confirmacaoInformada = input_confirma_senha.value
+
+    let arroba = emailConfirmada.indexOf("@");
+    let pontoCom = emailConfirmada.indexOf(".com")
+    let senhaCerta = senhaConfirmada.length
+    
+    email_div.innerHTML = ""
+    if(arroba == -1){
+        email_div.innerHTML = "Email deve conter o '@'"
+    }
+    if(pontoCom == -1){
+        email_div.innerHTML += "<br>Email deve conter o '.com'"
+    }
+    if(senhaCerta <6){
+        senha_div.innerHTML = "A senha deve conter pelo menos 6 Dígitos"
+    }else{
+        senha_div.innerHTML = ""
+    }
+    if(confirmacaoInformada != senhaConfirmada){
+        confirmacao_div.innerHTML = "As senhas não coincidem."
+    }else{
+        confirmacao_div.innerHTML = ""
+    }
+
+    if(aparecerCard.style.display == "none"){
+        aparecerCard.style.display = "block"
+    }
+
+}
+
+function sumirDiv(){
+    let aparecerCard = document.getElementById("cardAparecer")
+    if(aparecerCard.style.display == "block"){
+        aparecerCard.style.display = "none"
+    }
+}
+
+</script>
+

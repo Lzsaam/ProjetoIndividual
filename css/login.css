@@ -72,15 +72,85 @@ body {
   .navbar a:hover::before {
     width: 100%;
   }
+
+
+
+  .card {
+    width: 500px;
+    height: 559px;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+    margin-right: 80px;
+}
+  
+  .card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-inner h1 {
+    /* padding-top: 10px; */
+    font-size: 30px;
+    color: var(--red-valorant);
+    text-align: center;
+    font-family: font_valorant;
+  }
+
+  .card-inner p{
+    font-size: 20px;
+    color: var(--white-valorant);
+  }
+  .card:hover {
+    transform: scale(1.04) rotate(1deg);
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+    background: var(--red-valorant);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+  }
+  
+  .circle:nth-child(1) {
+    top: -25px;
+    left: -25px;
+  }
+  
+  .circle:nth-child(2) {
+    bottom: -25px;
+    right: -25px;
+    animation-name: move-down1;
+  }
+  
+  @keyframes move-up6 {
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes move-down1 {
+    to {
+      transform: translateY(10px);
+    }
+  }
   
 .wrapper {
     position: relative;
-    width: 750px;
-    height: 450px;
+    width: 850px;
+    height: 550px;
     background: transparent;
     border: 2px solid var(--white-valorant);
     overflow: hidden;
-    box-shadow: 0 0 25px var(--red-valorant)
+    box-shadow: 0 0 25px var(--red-valorant);
 }
 
 .wrapper .form-box {
@@ -333,24 +403,24 @@ body {
 }
 
 .info-text p {
-    font-size: 16px;
+    font-size: 20px;
     color: var(--white-valorant);
+    font-family: font_valorant;
+
 }
 
 .wrapper .bg-animate{
     position: absolute;
     top: -4px;
     right: 0;
-    width: 850px;
-    height: 600px;
-    background: linear-gradient(45deg, var(--red-valorant),var(--red-valorant));
-   border-bottom: 3px solid var(--white-valorant);
+    width: 950px;
+    height: 700px;
+    background: linear-gradient(45deg, var(--red-valorant), var(--red-valorant));
+    border-bottom: 3px solid var(--white-valorant);
     transform: rotate(10deg) skewY(40deg);
     transform-origin: bottom right;
     transition: 1.5s ease;
-   transition-delay: 1.6s;
-
-
+    transition-delay: 1.6s;
 }
 
 .wrapper.active .bg-animate{
@@ -358,13 +428,13 @@ body {
     transition-delay: .5s;
 }
 
-.wrapper .bg-animate2{
+.wrapper .bg-animate2 {
     position: absolute;
     top: 100%;
-    left: 250px;
-    width: 850px;
-    height: 700px;
-    background:var(--black-valorant);
+    left: 260px;
+    width: 950px;
+    height: 800px;
+    background: var(--black-valorant);
     border-top: 3px solid var(--white-valorant);
     transform: rotate(0) skewY(0);
     transform-origin: bottom left;
