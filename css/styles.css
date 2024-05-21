@@ -1,18 +1,33 @@
-/*----- imported google fonts -----*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --red-valorant: #ff4655;
+    --black-valorant: #0f1923;
+    --white-valorant: #f1faee;
+    --green-valorant: #556B2F;
+    --sage-valorant:#A4E6CB;
+}
+
+@font-face {
+    font-family: font_valorant;
+    src: url(../Fonts/Valorant\ Font.ttf);
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    background: #FF7F00;
+    background: var(--black-valorant);
 }
 
-#waqt,#din{
+
+#waqt,
+#din {
     font-size: 100%;
     /* color: #FF7F00; */
 }
@@ -22,7 +37,7 @@ body {
     background: #007bff;
 }
 
-.start_btn{
+.start_btn {
     border-radius: 99px;
 }
 
@@ -36,7 +51,7 @@ body {
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        /* border-radius: 99px; */
+    /* border-radius: 99px; */
 }
 
 .info_box.activeInfo,
@@ -56,15 +71,15 @@ body {
     text-align: center;
     font-weight: bold;
     padding: 0.7em 2em;
-    border: 3px solid #87CEEB;
+    border: 2px solid var(--white-valorant);
     border-radius: 99px;
     position: relative;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-    color: #87CEEB;
+    color: var(--white-valorant);
     text-decoration: none;
     transition: 0.3s ease all;
     z-index: 1;
-    background-color: #FF7F00;
+    background-color: var(--red-valorant);
 }
 
 .start_btn button:before {
@@ -76,25 +91,29 @@ body {
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: #87CEEB;
+    background-color: var(--black-valorant);
     border-radius: 99px;
     z-index: -1;
-  }
-  
-  .start_btn button:hover, .start_btn button:focus {
-    color: #FF7F00;
-  }
-  
-  .start_btn button:hover:before, .start_btn button:focus:before {
+}
+
+.start_btn button:hover,
+.start_btn button:focus {
+    color: var(--red-valorant);
+    border: 2px solid var(--red-valorant);
+    
+}
+
+.start_btn button:hover:before,
+.start_btn button:focus:before {
     transition: 0.5s all ease;
     left: 0;
     right: 0;
     opacity: 1;
-  }
-  
-  .start_btn button:active {
+}
+
+.start_btn button:active {
     transform: scale(0.9);
-  }
+}
 
 
 
@@ -105,19 +124,20 @@ body {
 
 .info_box {
     width: 540px;
-    background: #87CEEB;
+    background: var(--black-valorant);
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
-    border: 2px solid black
+    border: 2px solid var(--red-valorant)
 }
 
 .info_box .info-title {
+    color: var(--white-valorant);
     height: 60px;
     width: 100%;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--red-valorant);
     display: flex;
     align-items: center;
     padding: 0 30px;
@@ -128,6 +148,7 @@ body {
 
 .info_box .info-list {
     padding: 15px 30px;
+    color: var(--white-valorant);
 }
 
 .info_box .info-list .info {
@@ -137,7 +158,7 @@ body {
 
 .info_box .info-list .info span {
     font-weight: 600;
-    color: #FF7F00;
+    color: var(--red-valorant);
 }
 
 .info_box .buttons {
@@ -146,7 +167,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     padding: 0 30px;
-    border-top: 2px solid black;
+    border-top: 2px solid var(--red-valorant);
 }
 
 .info_box .buttons button {
@@ -159,19 +180,19 @@ body {
     /* border: none; */
     outline: none;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid var(--red-valorant);
     transition: all 0.3s ease;
 }
 
 .quiz_box {
     width: 540px;
-    background: #87CEEB;
+    background: var(--black-valorant);
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
-    border: 2px solid black
+    border: 2px solid var(--red-valorant)
 }
 
 .quiz_box header {
@@ -179,12 +200,13 @@ body {
     z-index: 2;
     height: 70px;
     padding: 0 30px;
-    background: #87CEEB;
+    background: var(--black-valorant);
     border-radius: 5px 5px 0 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+    color: var(--white-valorant);
 }
 
 .quiz_box header .title {
@@ -194,9 +216,9 @@ body {
 }
 
 .quiz_box header .timer {
-    color: #004085;
-    background: #cce5ff;
-    border: 1px solid #b8daff;
+    color: var(--white-valorant);
+    background: var(--black-valorant);
+    border: 1px solid var(--red-valorant);
     height: 45px;
     padding: 0 8px;
     border-radius: 5px;
@@ -217,12 +239,12 @@ body {
     font-weight: 500;
     height: 30px;
     width: 45px;
-    color: #fff;
+    color: var(--white-valorant);
     border-radius: 5px;
     line-height: 30px;
     text-align: center;
     background: #343a40;
-    border: 1px solid #343a40;
+    border: 1px solid var(--red-valorant);
     user-select: none;
 }
 
@@ -231,15 +253,16 @@ body {
     bottom: 0px;
     left: 0px;
     height: 3px;
-    background: #FF7F00;
+    background: var(--red-valorant);
 }
 
 section {
     padding: 25px 30px 20px 30px;
-    background: #87CEEB;
+    background: var(--black-valorant);
 }
 
 section .que_text {
+    color: var(--white-valorant);
     font-size: 25px;
     font-weight: 600;
 }
@@ -250,8 +273,9 @@ section .option_list {
 }
 
 section .option_list .option {
-    background: #FF7F00;
-    border: 2px solid #84c5fe;
+    color: var(--white-valorant);
+    background: var(--black-valorant);
+    border: 2px solid var(--red-valorant);
     border-radius: 5px;
     padding: 8px 15px;
     font-size: 17px;
@@ -268,15 +292,15 @@ section .option_list .option:last-child {
 }
 
 section .option_list .option:hover {
-    color: #004085;
-    background: #cce5ff;
-    border: 1px solid #b8daff;
+    color: var(--white-valorant);
+    background: var(--red-valorant);
+    border: 1px solid var(--white-valorant);
 }
 
 section .option_list .option.correct {
-    color: #155724;
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
+    color: var(--black-valorant);
+    background: var(--sage-valorant);   
+    border: 2px solid #23903c;
 }
 
 section .option_list .option.incorrect {
@@ -319,10 +343,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 2px solid #FF7F00;
+    border-top: 2px solid var(--red-valorant);
 }
 
 footer .total_que span {
+    color: var(--white-valorant);
     display: flex;
     user-select: none;
 }
@@ -344,10 +369,10 @@ footer button {
     cursor: pointer;
     border: none;
     outline: none;
-    color: black;
+    color: var(--white-valorant);
     border-radius: 5px;
-    background: #87CEEB;
-    border: 2px solid black;
+    background: var(--red-valorant);
+    border: 2px solid var(--white-valorant);
     line-height: 10px;
     opacity: 0;
     pointer-events: none;
@@ -356,8 +381,9 @@ footer button {
 }
 
 footer button:hover {
-    background: #FF7F00;
-    color: black;
+    background: var(--black-valorant);
+    color: var(--white-valorant);
+    border: 2px solid var(--red-valorant);
 }
 
 footer button.show {
@@ -379,7 +405,7 @@ footer button.show {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
-    border: 2px solid black ;
+    border: 2px solid black;
 }
 
 .result_box .icon {
@@ -425,22 +451,25 @@ footer button.show {
 }
 
 .buttons button.restart {
-    color: black;
-    background: #87CEEB;
+    color: var(--red-valorant);
+    background: var(--black-valorant);
 }
 
 .buttons button.restart:hover {
-    background: #FF7F00;
-    color: black;
+    border: 2px solid var(--white-valorant);
+    color: var(--white-valorant);
+    background: var(--red-valorant);
 }
 
 .buttons button.quit {
-    color: black;
-    background: #87CEEB;
-    
+
+    color: var(--red-valorant);
+    background: var(--black-valorant);
+
 }
 
 .buttons button.quit:hover {
-    color: black;
-    background: #FF7F00;
+    border: 2px solid var(--white-valorant);
+    color: var(--white-valorant);
+    background: var(--red-valorant);
 }
