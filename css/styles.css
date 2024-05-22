@@ -393,7 +393,7 @@ footer button.show {
 }
 
 .result_box {
-    background: #87CEEB;
+    background: var(--black-valorant);
     border-radius: 5px;
     display: flex;
     padding: 25px 30px;
@@ -405,18 +405,19 @@ footer button.show {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
-    border: 2px solid black;
+    border: 2px solid var(--red-valorant);
 }
 
 .result_box .icon {
     font-size: 100px;
-    color: #FF7F00;
+    color: var(--red-valorant);
     margin-bottom: 10px;
 }
 
 .result_box .complete_text {
     font-size: 20px;
     font-weight: 500;
+    color: var(--white-valorant);
 }
 
 .result_box .score_text span {
@@ -424,6 +425,7 @@ footer button.show {
     margin: 10px 0;
     font-size: 18px;
     font-weight: 500;
+    color: var(--white-valorant);
 }
 
 .result_box .score_text span p {
@@ -446,7 +448,7 @@ footer button.show {
     border: none;
     outline: none;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid var(--red-valorant);
     transition: all 0.3s ease;
 }
 
