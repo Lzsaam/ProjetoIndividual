@@ -28,6 +28,7 @@
 
 ::-webkit-scrollbar-thumb{
   background-color: var(--red-valorant);
+  border-radius: 10px;
 }
 body {
   background-color: var(--black-valorant);

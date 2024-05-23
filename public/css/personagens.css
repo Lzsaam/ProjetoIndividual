@@ -32,6 +32,7 @@ body {
 
 ::-webkit-scrollbar-thumb{
   background-color: var(--red-valorant);
+  border-radius: 10px;
 }
 
 .logo img {
