@@ -111,7 +111,7 @@
                  áreas estratégicas e opções de cobertura.
             </span>
             <div class="button_maps">
-                <button class="button-maps maps">
+                <button  onclick="button_maps('../html/mapas.html')" class="button-maps maps">
                     <span class="btn-txt-maps">Ver Mapas</span>
                 </button>    
 
@@ -171,5 +171,9 @@
     function button_agents(url){
         window.location.href = url;
 
+    }
+
+    function button_maps(url){
+        window.location.href = url;
     }
 </script>
