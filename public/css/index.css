@@ -15,11 +15,26 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  color: var(--red-valorant);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--red-valorant);
 }
 
 body {
   background-color: var(--black-valorant);
 }
+
 
 .logo img {
   width: 50px;

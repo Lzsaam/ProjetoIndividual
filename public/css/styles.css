@@ -25,6 +25,18 @@ body {
     background: var(--black-valorant);
 }
 
+::-webkit-scrollbar-track{
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar{
+    width: 10px;
+    color: var(--red-valorant);
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    background-color: var(--red-valorant);
+  }
 
 #waqt,
 #din {

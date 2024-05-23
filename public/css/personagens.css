@@ -21,6 +21,19 @@ body {
   background-color: var(--black-valorant);
 }
 
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  color: var(--red-valorant);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--red-valorant);
+}
+
 .logo img {
   width: 50px;
   height: 50px;
