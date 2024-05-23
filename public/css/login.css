@@ -115,12 +115,33 @@ body {
     color: var(--red-valorant);
     text-align: center;
     font-family: font_valorant;
+    margin-bottom: 50px;
   }
 
   .card-inner p{
+    /* margin-top: 50px; */
+    text-align: center;
     font-size: 20px;
     color: var(--white-valorant);
   }
+   .card-inner p {
+      animation: animated-text 2s steps(29,end) 1s 1 normal both,
+                 animated-cursor 600ms steps(29,end) infinite;
+    }
+    
+    /* text animation */
+    
+    @keyframes animated-text{
+      from{width: 0;}
+      to{width: 500px;}
+    }
+    
+    /* cursor animations */
+    
+    @keyframes animated-cursor{
+      from{border-right-color: rgba(0,255,0,.75);}
+      to{border-right-color: transparent;}
+    } */
   .card:hover {
     transform: scale(1.04) rotate(1deg);
   }
