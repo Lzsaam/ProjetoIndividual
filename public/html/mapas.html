@@ -24,6 +24,7 @@
           <a href="../index.html#maps">Conheça os Mapas</a>
         </nav>
         <button onclick="button_login('../html/login.html')" class="button login">
+
             <span class="btn-txt">LOGIN</span>
         </button>
     </header>
@@ -188,4 +189,9 @@
     </html>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      function button_login(url) {
+          window.location.href = url;
+      }
+  </script>
 
