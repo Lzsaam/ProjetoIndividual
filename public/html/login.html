@@ -159,11 +159,11 @@ function validarDiv(){
     }else{
         senha_div.innerHTML = ""
     }
-    // if(confirmacaoInformada != senhaConfirmada){
-    //     confirmacao_div.innerHTML = "As senhas não coincidem."
-    // }else{
-    //     confirmacao_div.innerHTML = ""
-    // }
+    if(confirmacaoInformada != senhaConfirmada){
+        confirmacao_div.innerHTML = "As senhas não coincidem."
+    }else{
+        confirmacao_div.innerHTML = ""
+    }
 
     if(aparecerCard.style.display == "none"){
         aparecerCard.style.display = "block"
