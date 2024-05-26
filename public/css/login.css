@@ -390,13 +390,15 @@ body {
   width: 100%;
   height: 300%;
   z-index: -1;
-  background: linear-gradient(var(--red-valorant), var(--black-valorant), var(--red-valorant), var(--black-valorant));
+  background: var(--red-valorant);
+  border: 2px solid var(--white-valorant);
   transition: .5s;
 }
 
 
 .btn:hover::before {
-  top: 0;
+  background: var(--black-valorant);
+  color: var(--red-valorant);
 }
 
 .form-box .logreg-link {
