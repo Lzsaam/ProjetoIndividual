@@ -9,9 +9,42 @@
     <title>DashBoard</title>
 </head>
 <body>
+    
     <header class="header">
+   
         <a href="../index.html" class="logo"> <img src="../assets/logo.png" alt=""></a>
         <nav class="navbar">
+            <aside class="sidebar">
+                <div class="sidebar-inner">
+                  <header class="sidebar-header">
+                    <button
+                      type="button"
+                      onclick="toggleSidebar()"
+                    ><i class="fa-solid fa-bars fa-2xl" style=" color: #ff4655; margin-top: 20px;"></i></button>
+                    <img src="../assets/logo.png" class="sidebar-logo" />
+                  </header>
+                  <nav class="sidebar-nav">
+                    <button type="button">
+                      <span><i class="fa-solid fa-question fa-2xl" style="color: #ff4655; margin-top: 20px;"></i></span>
+                      <span style="animation-delay: 0.1s">Quiz</span>
+                    </button>
+                    <button type="button">
+                      <span><i class="fa-solid fa-ranking-star fa-2xl" style="color: #ff4655; margin-top: 20px;"></i></span>
+                      <span style="animation-delay: 0.2s">Ranking</span>
+                    </button>
+                    <button  style="margin-top: 165%;" type="button">
+                      <span><i class="fa-solid fa-right-from-bracket fa-2xl" style="color: #ff4655; margin-top: 20px;"> </i></span>
+                      <span style="animation-delay: 0.3s">Sair</span>
+                    </button>
+                  </nav>
+                  <footer class="sidebar-footer">
+                    <button type="button">
+                      <img src="../assets/icon-lock.svg" />
+                      <span>Logout</span>
+                    </button>
+                  </footer>
+                </div>
+              </aside>
             <a href="../index.html">Home</a>
             <a href="../index.html#about">Sobre o jogo</a>
             <a href="../index.html#agents">Conheça os Agentes</a>
@@ -20,3 +53,7 @@
     </header>
 </body>
 </html>
+
+<script type="text/javascript">
+    const toggleSidebar = () => document.body.classList.toggle("open");
+  </script>     

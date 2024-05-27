@@ -12,20 +12,6 @@
   src: url(../Fonts/Valorant\ Font.ttf);
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: 1px solid var(--black-valorant);
-  -webkit-text-fill-color: var(--white-valorant)!important;
-  -webkit-box-shadow: 0 0 0px 1000px var(--black-valorant) inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
 
 * {
   margin: 0;
@@ -54,6 +40,121 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: var(--red-valorant);
   border-radius: 10px;
+}
+
+
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 800%;
+  background: var(--black-valorant);
+  border-right: 2px solid var(--red-valorant);
+  transition: width 0.4s;
+  z-index: 2;
+}
+
+body.open .sidebar {
+  width: 260px;
+}
+
+.sidebar-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 1.25rem 0 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-burger {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  transition: 0.3s;
+}
+
+
+
+.sidebar-logo {
+  margin-left: 50px;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+body.open .sidebar-logo {
+  opacity: 1;
+}
+
+.sidebar-nav {
+  padding-top: 10px;
+  flex: 1 1 auto;
+}
+
+.sidebar button {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  height: 50px;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  padding: 0 25px;
+}
+
+.sidebar button > img {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar button > span {
+  color: var(--white-valorant);
+  opacity: 0;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    translate: 0 10px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+body.open .sidebar button > span {
+  opacity: 1;
+  animation: appear 0.3s both;
 }
 
 .logo img {
