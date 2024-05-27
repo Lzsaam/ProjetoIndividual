@@ -239,11 +239,11 @@ function queCounter(index) {
 
 function displayTime() {
    
-    var currentTime = new Date();
+    let currentTime = new Date();
     
-    var hours = currentTime.getHours();
-    var minutes = currentTime.getMinutes();
-    var seconds = currentTime.getSeconds();
+    let hours = currentTime.getHours();
+    let minutes = currentTime.getMinutes();
+    let seconds = currentTime.getSeconds();
     
  
     if (hours < 10) {
@@ -263,13 +263,13 @@ function displayTime() {
 
 function displayDate() {
     
-    var currentDate = new Date();
+    let currentDate = new Date();
   
-    var date = currentDate.getDate();
-    var month = currentDate.getMonth();
-    var year = currentDate.getFullYear();
+    let date = currentDate.getDate();
+    let month = currentDate.getMonth();
+    let year = currentDate.getFullYear();
     
-    var monthNames = [
+    let monthNames = [
         "Janeiro", "Fevereiro", "Março",
         "Abril", "Maio", "Junho", "Julho",
         "Agosto", "Setembro", "Outubro",

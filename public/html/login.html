@@ -42,16 +42,16 @@
             <h2 class="animation" style="--i:0; --j:21;">Login</h2>
             <form action="#">
                 <div class="input-box animation" style="--i:1; --j:22;">
-                    <input type="text " required>
-                    <label>Nome</label>
+                    <input id="input_login_email" type="text " required>
+                    <label>Email</label>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box animation" style="--i:2; --j:23;">
-                    <input type="password" required>
+                    <input id="input_login_senha" type="password" required>
                     <label>Senha</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
-                <button type="submit"  class="btn animation" animation style="--i:3; --j:24;">Login</button>
+                <button onclick="entrar()" type="submit"  class="btn animation" animation style="--i:3; --j:24;">Login</button>
                 <div class="logreg-link animation" style="--i:4; --j:25;">
                     <p>Você não tem conta ainda ?<a href="#" class="register-link">Cadastra-se</a> </p>
                 </div>
@@ -255,7 +255,59 @@ function cadastrar() {
   //     });
   // }
 
+  
+  function entrar() {
 
+        var emailVar = input_login_email.value;
+        var senhaVar = input_login_senha.value;
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                  
+                        window.location = "quiz.html";
+                    // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+               
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
 </script>
 
 
