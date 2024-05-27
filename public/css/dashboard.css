@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --red-valorant: #ff4655;
+  --black-valorant: #0f1923;
+  --white-valorant: #f1faee;
+}
+
+@font-face {
+  font-family: font_valorant;
+  src: url(../Fonts/Valorant\ Font.ttf);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid var(--black-valorant);
+  -webkit-text-fill-color: var(--white-valorant)!important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--black-valorant) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--black-valorant);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  color: var(--red-valorant);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--red-valorant);
+  border-radius: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.header {
+  font-family: "Poppins", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background-color: var(--black-valorant);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  border-bottom: 2px solid var(--red-valorant);
+}
+
+.navbar {
+  display: flex;
+  margin-left: 400px;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: var(--white-valorant);
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--red-valorant);
+  transition: 0.3s;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
