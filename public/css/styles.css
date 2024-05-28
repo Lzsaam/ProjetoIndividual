@@ -63,6 +63,9 @@ body {
   
   body.open .sidebar {
     width: 260px;
+    height: 350%;
+    border-bottom: 2px solid var(--red-valorant);
+    transition: 2s;
   }
   
   .sidebar-inner {

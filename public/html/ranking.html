@@ -24,6 +24,11 @@
                         <img src="../assets/logo.png" class="sidebar-logo" />
                     </header>
                     <nav class="sidebar-nav">
+                        <button  class="button_side" onclick="button_dash('../html/dashboard.html')" type="button">
+                            <span><i class="fa-solid fa-chart-simple fa-2xl"
+                                    style="color: #ff4655; margin-top: 20px;"></i></span>
+                            <span style="animation-delay: 0.1s">DashBoard</span>
+                        </button>
                         <button onclick="button_quiz('../html/quiz.html')" type="button">
                             <span><i class="fa-solid fa-question fa-2xl"
                                     style="color: #ff4655; margin-top: 20px;"></i></span>
@@ -34,7 +39,7 @@
                                     style="color: #ff4655; margin-top: 20px;"></i></span>
                             <span style="animation-delay: 0.2s">Ranking</span>
                         </button>
-                        <button onclick="button_sair('../html/login.html')" style="margin-top: 220%;" type="button">
+                        <button onclick="button_sair('../html/login.html')" type="button">
                             <span><i class="fa-solid fa-right-from-bracket fa-2xl"
                                     style="color: #ff4655; margin-top: 20px;"> </i></span>
                             <span style="animation-delay: 0.3s">Sair</span>
@@ -86,6 +91,10 @@
         window.location.href = url;
     }
     function button_quiz(url) {
+        window.location.href = url;
+    }
+
+    function button_dash(url){
         window.location.href = url;
     }
 </script>
