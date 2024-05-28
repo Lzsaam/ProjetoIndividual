@@ -59,7 +59,7 @@ button {
   top: 0;
   left: 0;
   width: 72px;
-  height: 800%;
+  height: 1000%;
   background: var(--black-valorant);
   border-right: 2px solid var(--red-valorant);
   transition: width 0.4s;
