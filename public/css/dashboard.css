@@ -208,3 +208,20 @@ body.open .sidebar button > span {
 .navbar a:hover::before {
   width: 100%;
 }
+
+
+.main_dashboard{
+  display: flex;
+}
+
+.dashboard {
+  background-color: var(--black-valorant);
+  border: 2px solid var(--red-valorant);
+  width: 1000px;
+  height: 600px;
+}
+
+#myChart {
+  width: 100%;
+}
+

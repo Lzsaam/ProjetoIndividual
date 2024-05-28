@@ -80,7 +80,7 @@ function cadastrar(req, res) {
     }
 }
 
-function autenticar() {
+function entrar() {
 
     var emailVar = input_login_email.value;
     var senhaVar = input_login_senha.value;

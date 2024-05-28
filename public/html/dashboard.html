@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/dashboard.css">
     <script src="https://kit.fontawesome.com/298008b39c.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon" href="../assets/logo.png">
 
     <title>DashBoard</title>
@@ -26,7 +27,7 @@
                         <img src="../assets/logo.png" class="sidebar-logo" />
                     </header>
                     <nav class="sidebar-nav">
-                        <button  class="button_side" onclick="button_dash('../html/dashboard.html')" type="button">
+                        <button class="button_side" onclick="button_dash('../html/dashboard.html')" type="button">
                             <span><i class="fa-solid fa-chart-simple fa-2xl"
                                     style="color: #ff4655; margin-top: 20px;"></i></span>
                             <span style="animation-delay: 0.1s">DashBoard</span>
@@ -55,6 +56,14 @@
             <a href="../index.html#maps">Conheça os Mapas</a>
         </nav>
     </header>
+    <section class="main_dashboard">
+
+        <div class="dashboard">
+            <canvas  style="height: 100%;" id="myChart"></canvas>
+        </div>
+
+    </section>
+
 </body>
 
 </html>
@@ -74,7 +83,41 @@
         window.location.href = url;
     }
 
-    function button_dash(url){
+    function button_dash(url) {
         window.location.href = url;
     }
+</script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Média dos pontos',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1,
+                backgroundColor: '#ff4655', // Cor de fundo
+                borderColor: '#f1faee', // Cor da borda
+                autopadding: true,
+            }]
+        },
+        options: {
+        scales: {
+            x: {
+                grid: {
+                    color: '#f1faee' // Cor das linhas de grade no eixo x
+                }
+            },
+            y: {
+                grid: {
+                    color: '#f1faee' // Cor das linhas de grade no eixo y
+                },
+                beginAtZero: true
+            }
+        }
+    }
+});
 </script>
