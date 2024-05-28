@@ -51,7 +51,8 @@
                     <label>Senha</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
-                <button onclick="entrar()" type="submit"  class="btn animation" animation style="--i:3; --j:24;">Login</button>
+                <button onclick="autenticar()" type="submit" class="btn animation" animation
+                    style="--i:3; --j:24;">Login</button>
                 <div class="logreg-link animation" style="--i:4; --j:25;">
                     <p>Você não tem conta ainda ?<a href="#" class="register-link">Cadastre-se</a> </p>
                 </div>
@@ -62,11 +63,12 @@
             <p class="animation" style="--i:1; --j:21;">Ao Universo valorant</p>
         </div>
 
-        <div  class="form-box register">
+        <div class="form-box register">
             <h2 class="animation" style="--i:17; --j:0">Cadastre-se</h2>
             <form action="#">
-                <div class="input-box animation" style="--i:18; --j:1"> 
-                    <input id="input_nome_register" type="text" required oninput="verificaCampos()" onkeyup="validarDiv()" oninvalid="validarCampo(this, 'Por favor, preencha o seu nome.')">
+                <div class="input-box animation" style="--i:18; --j:1">
+                    <input id="input_nome_register" type="text" required oninput="verificaCampos()"
+                        onkeyup="validarDiv()" oninvalid="validarCampo(this, 'Por favor, preencha o seu nome.')">
                     <label>Nome</label>
                     <i class='bx bxs-user'></i>
                 </div>
@@ -76,12 +78,14 @@
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box animation" style="--i:20; --j:3">
-                    <input id="input_senha_register" type="password" required oninput="verificaCampos()" onkeyup="validarDiv()" oninvalid="validarCampo(this, 'Por favor, preencha a sua senha.')">
+                    <input id="input_senha_register" type="password" required oninput="verificaCampos()"
+                        onkeyup="validarDiv()" oninvalid="validarCampo(this, 'Por favor, preencha a sua senha.')">
                     <label>Senha</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="input-box animation" style="--i:20; --j:3">
-                    <input id="input_confirma_senha" type="password" required oninput="verificaCampos()" onkeyup="validarDiv()" oninvalid="validarCampo(this, 'Por favor, confirme a sua senha.')">
+                    <input id="input_confirma_senha" type="password" required oninput="verificaCampos()"
+                        onkeyup="validarDiv()" oninvalid="validarCampo(this, 'Por favor, confirme a sua senha.')">
                     <label> Confirme a Sua Senha</label>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
@@ -91,7 +95,8 @@
                 <button type="submit" onclick="cadastrar()" class="btn animation" style="--i:21; --j:4">Cadastrar
                 </button>
                 <div class="logreg-link animation" style="--i:22; --j:5">
-                    <p>Você já possui uma conta ? <a href="#"   class="login-link"><span onclick="sumirDiv()">Login</span></a> </p>
+                    <p>Você já possui uma conta ? <a href="#" class="login-link"><span
+                                onclick="sumirDiv()">Login</span></a> </p>
                 </div>
             </form>
         </div>
@@ -106,157 +111,157 @@
 
 </html>
 <script>
-//     function validarCampo(campo, mensagem) {
-//     if (campo.value === "") {
-//         campo.setCustomValidity(mensagem);
-//     } else {
-//         campo.setCustomValidity("");
-//     }
-// }
-function verificaCampos() {
-    var nome = document.getElementById("input_nome_register");
-    var senha = document.getElementById("input_senha_register");
-    var confirmaSenha = document.getElementById("input_confirma_senha");
+    //     function validarCampo(campo, mensagem) {
+    //     if (campo.value === "") {
+    //         campo.setCustomValidity(mensagem);
+    //     } else {
+    //         campo.setCustomValidity("");
+    //     }
+    // }
+    function verificaCampos() {
+        var nome = document.getElementById("input_nome_register");
+        var senha = document.getElementById("input_senha_register");
+        var confirmaSenha = document.getElementById("input_confirma_senha");
 
-//     validarCampo(nome, "Por favor, preencha o seu nome.");
-//     validarCampo(senha, "Por favor, preencha a sua senha.");
-//     validarCampo(confirmaSenha, "Por favor, confirme a sua senha.");
-//     verificarSenhas();
-}
-function verificarSenhas() {
-    var senha = document.getElementById("input_senha_register");
-    var confirmaSenha = document.getElementById("input_confirma_senha");
-
-    if (confirmaSenha.value !== senha.value) {
-        confirmaSenha.setCustomValidity("As senhas não coincidem.");
-    } else {
-        confirmaSenha.setCustomValidity("");
+        //     validarCampo(nome, "Por favor, preencha o seu nome.");
+        //     validarCampo(senha, "Por favor, preencha a sua senha.");
+        //     validarCampo(confirmaSenha, "Por favor, confirme a sua senha.");
+        //     verificarSenhas();
     }
-}
-document.getElementById("input_senha_register").addEventListener("input", verificarSenhas);
-document.getElementById("input_confirma_senha").addEventListener("input", verificarSenhas);
+    function verificarSenhas() {
+        var senha = document.getElementById("input_senha_register");
+        var confirmaSenha = document.getElementById("input_confirma_senha");
 
-function validarDiv(){
-    let aparecerCard = document.getElementById("cardAparecer")
-    const nomeConfirmada = input_nome_register.value
-    const emailConfirmada = input_email_register.value
-    const senhaConfirmada = input_senha_register.value
-    const confirmacaoInformada = input_confirma_senha.value
-
-    let arroba = emailConfirmada.indexOf("@");
-    let pontoCom = emailConfirmada.indexOf(".com")
-    let senhaCerta = senhaConfirmada.length
-    
-    email_div.innerHTML = ""
-    if(arroba == -1){
-        email_div.innerHTML = "Email deve conter o '@'"
+        if (confirmaSenha.value !== senha.value) {
+            confirmaSenha.setCustomValidity("As senhas não coincidem.");
+        } else {
+            confirmaSenha.setCustomValidity("");
+        }
     }
-    if(pontoCom == -1){
-        email_div.innerHTML += "<br>Email deve conter o '.com'"
+    document.getElementById("input_senha_register").addEventListener("input", verificarSenhas);
+    document.getElementById("input_confirma_senha").addEventListener("input", verificarSenhas);
+
+    function validarDiv() {
+        let aparecerCard = document.getElementById("cardAparecer")
+        const nomeConfirmada = input_nome_register.value
+        const emailConfirmada = input_email_register.value
+        const senhaConfirmada = input_senha_register.value
+        const confirmacaoInformada = input_confirma_senha.value
+
+        let arroba = emailConfirmada.indexOf("@");
+        let pontoCom = emailConfirmada.indexOf(".com")
+        let senhaCerta = senhaConfirmada.length
+
+        email_div.innerHTML = ""
+        if (arroba == -1) {
+            email_div.innerHTML = "Email deve conter o '@'"
+        }
+        if (pontoCom == -1) {
+            email_div.innerHTML += "<br>Email deve conter o '.com'"
+        }
+        if (senhaCerta < 6) {
+            senha_div.innerHTML = "A senha deve conter pelo menos 6 Dígitos"
+        } else {
+            senha_div.innerHTML = ""
+        }
+        if (confirmacaoInformada != senhaConfirmada) {
+            confirmacao_div.innerHTML = "As senhas não coincidem."
+        } else {
+            confirmacao_div.innerHTML = ""
+        }
+
+        if (aparecerCard.style.display == "none") {
+            aparecerCard.style.display = "block"
+        }
+
     }
-    if(senhaCerta <6){
-        senha_div.innerHTML = "A senha deve conter pelo menos 6 Dígitos"
-    }else{
-        senha_div.innerHTML = ""
-    }
-    if(confirmacaoInformada != senhaConfirmada){
-        confirmacao_div.innerHTML = "As senhas não coincidem."
-    }else{
-        confirmacao_div.innerHTML = ""
+
+    function sumirDiv() {
+        let aparecerCard = document.getElementById("cardAparecer")
+        if (aparecerCard.style.display == "block") {
+            aparecerCard.style.display = "none"
+        }
     }
 
-    if(aparecerCard.style.display == "none"){
-        aparecerCard.style.display = "block"
+
+    function cadastrar() {
+
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = input_nome_register.value;
+        var emailVar = input_email_register.value;
+        var senhaVar = input_senha_register.value;
+        var confirmacaoSenhaVar = input_confirma_senha.value;
+        // var empresaVar = listaEmpresas.value
+        if (
+            nomeVar == "" ||
+            emailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == ""
+            // empresaVar == ""
+        )
+
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar,
+                    // empresaServer: empresaVar
+                }),
+            })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        //   cardErro.style.display = "block";
+
+                        //   mensagem_erro.innerHTML =
+                        //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                        setTimeout(() => {
+                            window.location = "login.html";
+                        }, "2000");
+
+                        //   limparFormulario();
+                        //   finalizarAguardar();
+                        // } else {
+                        //   throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    // finalizarAguardar();
+                });
+
+        return false;
     }
 
-}
+    // function listar() {
+    //   fetch("/empresas/listar", {
+    //     method: "GET",
+    //   })
+    //     .then(function (resposta) {
+    //       resposta.json().then((empresas) => {
+    //         empresas.forEach((empresa) => {
+    //           listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+    //         });
+    //       });
+    //     })
+    //     .catch(function (resposta) {
+    //       console.log(`#ERRO: ${resposta}`);
+    //     });
+    // }
 
- function sumirDiv(){
-     let aparecerCard = document.getElementById("cardAparecer")
-     if(aparecerCard.style.display == "block"){
-         aparecerCard.style.display = "none"
-     }
- }
 
-
-function cadastrar() {
-
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = input_nome_register.value;
-    var emailVar = input_email_register.value;
-    var senhaVar = input_senha_register.value;
-    var confirmacaoSenhaVar = input_confirma_senha.value;
-    // var empresaVar = listaEmpresas.value
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == "" 
-      // empresaVar == ""
-    ) 
-
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-        // empresaServer: empresaVar
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-        //   cardErro.style.display = "block";
-
-        //   mensagem_erro.innerHTML =
-        //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-        //   limparFormulario();
-        //   finalizarAguardar();
-        // } else {
-        //   throw "Houve um erro ao tentar realizar o cadastro!";
-         }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        // finalizarAguardar();
-      });
-
-    return false;
-  }
-
-  // function listar() {
-  //   fetch("/empresas/listar", {
-  //     method: "GET",
-  //   })
-  //     .then(function (resposta) {
-  //       resposta.json().then((empresas) => {
-  //         empresas.forEach((empresa) => {
-  //           listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-  //         });
-  //       });
-  //     })
-  //     .catch(function (resposta) {
-  //       console.log(`#ERRO: ${resposta}`);
-  //     });
-  // }
-
-  
-  function entrar() {
+    function autenticar() {
 
         var emailVar = input_login_email.value;
         var senhaVar = input_login_senha.value;
@@ -285,7 +290,7 @@ function cadastrar() {
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                        window.location = "dashboard.html";
+                    window.location = "dashboard.html";
                     // apenas para exibir o loading
 
                 });
@@ -296,7 +301,7 @@ function cadastrar() {
 
                 resposta.text().then(texto => {
                     console.error(texto);
-               
+
                 });
             }
 
@@ -307,6 +312,3 @@ function cadastrar() {
         return false;
     }
 </script>
-
-
-
