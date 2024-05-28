@@ -52,6 +52,13 @@ body {
     border-right: 2px solid var(--red-valorant);
     transition: width 0.4s;
     z-index: 2;
+    transition: 2s;
+  }
+  body.open .sidebar {
+    width: 260px;
+    height: 350%;
+    border-bottom: 2px solid var(--red-valorant);
+    transition: 2s;
   }
 
   .button_side{
@@ -61,12 +68,6 @@ body {
   cursor: pointer;
   }
   
-  body.open .sidebar {
-    width: 260px;
-    height: 350%;
-    border-bottom: 2px solid var(--red-valorant);
-    transition: 2s;
-  }
   
   .sidebar-inner {
     position: absolute;
