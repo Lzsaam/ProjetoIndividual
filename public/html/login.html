@@ -202,7 +202,11 @@
             senhaVar == "" ||
             confirmacaoSenhaVar == ""
             // empresaVar == ""
-        )
+        ) {
+            console.log("erro!")
+        } else if (senhaVar != confirmacaoSenhaVar) {
+            console.log("erro!")
+        }
 
             // Enviando o valor da nova input
             fetch("/usuarios/cadastrar", {
