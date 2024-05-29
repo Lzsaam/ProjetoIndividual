@@ -41,7 +41,49 @@ let counter; // Variável para o temporizador
 let counterLine; // Variável para a linha de tempo
 let widthValue = 0; // Valor inicial da largura da linha de tempo
 
+let idUsuario = 5
 
+function cadastrarPontuacao(){
+
+    console.log("TESTE ETESTE TESTE")
+          // Enviando o valor da nova input
+          fetch("/pontuacao/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idUsuarioServer: idUsuario,
+                userScoreServer: userScore
+                // empresaServer: empresaVar
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+    
+                if (resposta.ok) {
+                    //   cardErro.style.display = "block";
+    
+                    //   mensagem_erro.innerHTML =
+                    //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+    
+                    console.log(resposta)
+    
+                    //   limparFormulario();
+                    //   finalizarAguardar();
+                    // } else {
+                    //   throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+    
+    return false;
+    }
 
 const restart_quiz = result_box.querySelector(".buttons .restart"); 
 const quit_quiz = result_box.querySelector(".buttons .quit"); 
@@ -183,6 +225,7 @@ function showResult() {
         scoreText.innerHTML = scoreTag;
     }
 }
+
 
 
 
