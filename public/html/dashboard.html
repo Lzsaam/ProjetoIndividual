@@ -59,7 +59,7 @@
     <section class="main_dashboard">
 
         <div class="dashboard">
-            <canvas  style="height: 100%;" id="myChart"></canvas>
+            <canvas  style="height: 100%; width: 100%;" id="myChart"></canvas>
         </div>
 
     </section>
@@ -92,11 +92,11 @@
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
-        type: 'bar',
+        type: 'pie',
         data: {
             labels: ['0','1', '2', '3', '4', '5', '6','7','8','9','10'],
             datasets: [{
-                label: 'Média dos pontos',
+                label: 'Porcentagem',
                 data: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                 borderWidth: 1,
                 backgroundColor: '#ff4655', // Cor de fundo

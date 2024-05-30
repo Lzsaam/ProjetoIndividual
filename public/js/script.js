@@ -45,7 +45,7 @@ let idUsuario = 5
 
 function cadastrarPontuacao(){
 
-    console.log("TESTE ETESTE TESTE")
+    console.log(userScore)
           // Enviando o valor da nova input
           fetch("/pontuacao/cadastrar", {
             method: "POST",
@@ -56,7 +56,8 @@ function cadastrarPontuacao(){
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 idUsuarioServer: idUsuario,
-                userScoreServer: userScore
+                userScoreServer: userScore,
+                acertosServer: userScore,
                 // empresaServer: empresaVar
             }),
         })

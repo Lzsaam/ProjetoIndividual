@@ -8,4 +8,9 @@ router.post("/cadastrar", function (req, res) {
     pontuacaoController.cadastrarPontuacao(req, res);
 })
 
+router.get("/RankPontuacao", function (req, res) {
+    pontuacaoController.RankPontuacao(req, res);
+})
+
 module.exports = router;
+
