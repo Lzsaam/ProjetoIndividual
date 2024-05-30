@@ -228,7 +228,7 @@ main {
     margin: 10% 0 0 16%;
     justify-content: center;
     width: 800px;
-    height: 500px;
+    height: auto;
     color: white;
     border-radius: 10px;
 }
@@ -269,7 +269,7 @@ main {
     display: flex;
     padding: 30px;
     border: 1px solid var(--red-valorant);
-    width: 90px;
+    width: 130px;
 }
 
 .buttons {

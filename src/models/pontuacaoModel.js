@@ -7,7 +7,7 @@ function cadastrarPontuacao(pontuacao, idUsuario, acertos) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
-        INSERT INTO Resposta (pontos, fkUsuario, acertos) VALUES (${pontuacao}, '${idUsuario}', ${acertos});
+        INSERT INTO Resposta (pontos, fkUsuario, acertos) VALUES (${pontuacao}, ${idUsuario}, ${acertos});
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

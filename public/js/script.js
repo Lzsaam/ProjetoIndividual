@@ -41,10 +41,9 @@ let counter; // Variável para o temporizador
 let counterLine; // Variável para a linha de tempo
 let widthValue = 0; // Valor inicial da largura da linha de tempo
 
-let idUsuario = 5
 
 function cadastrarPontuacao(){
-
+    let idUsuario = sessionStorage.ID_USUARIO
     console.log(userScore)
           // Enviando o valor da nova input
           fetch("/pontuacao/cadastrar", {
