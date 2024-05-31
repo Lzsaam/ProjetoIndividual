@@ -19,7 +19,7 @@ function RankPontuacao(pontuacao, idUsuario,) {
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
     SELECT * FROM usuario
-    JOIN Resposta ON id = fkUsuario ORDER BY pontos;
+    JOIN Resposta ON id = fkUsuario ORDER BY pontos DESC;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
