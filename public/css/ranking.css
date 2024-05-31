@@ -236,6 +236,7 @@ main {
 .ranking h1 {
     font-family: font_valorant;
     color: var(--red-valorant);
+    margin-top: 20px;
 }
 
 
@@ -254,6 +255,7 @@ main {
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 #rankingList p {
