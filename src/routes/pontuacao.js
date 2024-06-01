@@ -12,5 +12,9 @@ router.get("/RankPontuacao", function (req, res) {
     pontuacaoController.RankPontuacao(req, res);
 })
 
+router.get("/dashboardAcertos", function (req, res) {
+    pontuacaoController.dashboardAcertos(req, res);
+});
+
 module.exports = router;
 

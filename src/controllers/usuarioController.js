@@ -10,39 +10,30 @@ function autenticar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-
         usuarioModel.autenticar(email, senha)
-            .then(
-                function (resultadoAutenticar) {
-                    console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
+            .then(function (resultadoAutenticar) {
+                console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
-                    if (resultadoAutenticar.length == 1) {
-                        console.log(resultadoAutenticar);
-                                    res.json({
-                                        id: resultadoAutenticar[0].id,
-                                        email: resultadoAutenticar[0].email,
-                                        nome: resultadoAutenticar[0].nome,
-                                        senha: resultadoAutenticar[0].senha,
-                                    });
-                            
-                            
-                    } else if (resultadoAutenticar.length == 0) {
-                        res.status(403).send("Email e/ou senha inválido(s)");
-                    } else {
-                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
-                    }
+                if (resultadoAutenticar.length == 1) {
+                    console.log(resultadoAutenticar);
+                    res.json({
+                        id: resultadoAutenticar[0].id,
+                        email: resultadoAutenticar[0].email,
+                        nome: resultadoAutenticar[0].nome,
+                        senha: resultadoAutenticar[0].senha,
+                    });
+                } else if (resultadoAutenticar.length == 0) {
+                    res.status(403).send("Email e/ou senha inválido(s)");
+                } else {
+                    res.status(403).send("Mais de um usuário com o mesmo login e senha!");
                 }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
-                    // res.status(500).json(erro.sqlMessage);
-
-                }
-            );
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                // res.status(500).json(erro.sqlMessage);
+            });
     }
-
 }
 
 function cadastrar(req, res) {
@@ -58,30 +49,23 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    }
-    else {
-
+    } else {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, senha)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            });
     }
 }
 
 function entrar() {
-
     var emailVar = input_login_email.value;
     var senhaVar = input_login_senha.value;
 
@@ -98,7 +82,7 @@ function entrar() {
             senhaServer: senhaVar
         })
     }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
+        console.log("ESTOU NO THEN DO entrar()!");
 
         if (resposta.ok) {
             console.log(resposta);
@@ -111,27 +95,24 @@ function entrar() {
                 sessionStorage.ID_USUARIO = json.id;
                 window.location = "dashboard.html";
                 // apenas para exibir o loading
-
             });
-
         } else {
-
             console.log("Houve um erro ao tentar realizar o login!");
 
             resposta.text().then(texto => {
                 console.error(texto);
-
             });
         }
-
     }).catch(function (erro) {
         console.log(erro);
-    })
+    });
 
     return false;
 }
 
+
+
 module.exports = {
     autenticar,
     cadastrar
-}
+};
