@@ -46,7 +46,7 @@ function cadastrarPontuacao(){
     let idUsuario = sessionStorage.ID_USUARIO
     console.log(userScore)
           // Enviando o valor da nova input
-          fetch("/pontuacao/cadastrar", {
+            fetch("/pontuacao/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -272,7 +272,6 @@ function startTimerLine(time) {
 
 
 function queCounter(index) {
-   
     let totalQueCounTag = '<span><p>' + index + '</p> de <p>' + questions.length + '</p> Questões</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag; 
 }
