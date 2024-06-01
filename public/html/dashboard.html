@@ -71,12 +71,13 @@
 
 
 <script type="text/javascript">
+    let pergunta = 0
     let pergunta1 = 0
     let pergunta2 = 0
     let pergunta3 = 0
     let pergunta4 = 0
     let pergunta5 = 0
-    let pergunta6 = 0
+    let pergunta6 = 0   
     let pergunta7 = 0
     let pergunta8 = 0
     let pergunta9 = 0
@@ -132,8 +133,10 @@
                 pergunta8 = qtdPessoas
             }else if(ponto == 9){
                 pergunta9 = qtdPessoas
-            }else{
+            }else if (ponto == 10){
                 pergunta10 = qtdPessoas
+            }else {
+                pergunta = qtdPessoas
             }
             
         }
@@ -145,7 +148,7 @@
             datasets: 
             [{
                 label:"Quantidade de Pessoas que acertaram 'X' Perguntas",
-              data: [pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, pergunta6, pergunta7,pergunta7,pergunta8,pergunta9,pergunta10],
+              data: [pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, pergunta6, pergunta7,pergunta8,pergunta9,pergunta10],
               borderWidth: 1,
                 backgroundColor: '#ff4655', // Cor de fundo
                 borderColor: '#f1faee', // Cor da borda
