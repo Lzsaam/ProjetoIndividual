@@ -27,43 +27,38 @@ CREATE TABLE Resposta (
 	foreign key (fkUsuario) REFERENCES usuario (id)
 );
 
+
+
 SELECT * FROM USUARIO
-JOIN Resposta ON id = fkUsuario ORDER BY pontos;
+JOIN Resposta ON id = fkUsuario ORDER BY pontos DESC;
+
+SELECT count(idResposta) FROM Resposta WHERE acertos = 0;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 1;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 2;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 3;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 4;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 5;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 6;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 7;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 8;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 9;
+SELECT count(idResposta) FROM Resposta WHERE acertos = 10;
+
+SELECT avg(Pontos) FROM Resposta JOIN usuario ON id = fkUsuario;
+
+SELECT acertos, COUNT(idResposta) as count
+FROM Resposta
+GROUP BY acertos
+ORDER BY acertos;
 
 SELECT * FROM Resposta;
 
 
-create table resposta_certa(
-idRespostaCerta int primary key auto_increment,
-correta varchar(45)
-);
-
-create table questoes(
-idRanking int  auto_increment,
-fkResposta int,
-	foreign key (fkresposta)
-		references resposta (idResposta),
-fkUsuario int, 
-	foreign key (fkUsuario)
-		references usuario(id),
-primary key(idRanking, fkResposta, fkUsuario),
-score int,
-acerto varchar(45)
-);
 
 
-create table ranking (
-idRaNKING int primary key auto_increment,
-fkUsuario int,
-foreign key (fkUsuario) references usuario(id),
-score int,
-acertos int
-);
-
-select * from usuario;	
 
 
-SELECT * FROM RANKING ORDER BY SCORE;
+
 
 
 
