@@ -9,6 +9,12 @@
   font-family: "Poppins", sans-serif;
 }
 
+
+@font-face {
+  font-family: font_valorant;
+  src: url(../Fonts/Valorant\ Font.ttf);
+}
+
 :root {
   --red-valorant: #ff4655;
   --black-valorant: #0f1923;
@@ -235,6 +241,8 @@ a:hover {
 h1 {
   line-height: 1.4;
   font-size: 4rem;
+  font-family: font_valorant;
+  color: var(--red-valorant);
 }
 
 .screen {
