@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/aimlab.css">
+    <script src="https://kit.fontawesome.com/298008b39c.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="icon" href="../assets/logo.png">
+
+    <title>Treinamento de Mira</title>
+  </head>
+  <body>
+    <header class="header">
+
+      <a href="../index.html" class="logo"> <img src="../assets/logo.png" alt=""></a>
+      <nav class="navbar">
+          <aside class="sidebar">
+              <div class="sidebar-inner">
+                  <header class="sidebar-header">
+                      <button class="button_side" type="button" onclick="toggleSidebar()"><i class="fa-solid fa-bars fa-2xl"
+                              style=" color: #ff4655; margin-top: 20px;"></i></button>
+                      <img src="../assets/logo.png" class="sidebar-logo" />
+                  </header>
+                  <nav class="sidebar-nav">
+                      <button  class="button_side" onclick="button_dash('../html/dashboard.html')" type="button">
+                          <span><i class="fa-solid fa-chart-simple fa-2xl"
+                                  style="color: #ff4655; margin-top: 20px;"></i></span>
+                          <span style="animation-delay: 0.1s">DashBoard</span>
+                      </button>
+                      <button  class="button_side" onclick="button_quiz('../html/quiz.html')" type="button">
+                          <span><i class="fa-solid fa-question fa-2xl"
+                                  style="color: #ff4655; margin-top: 20px;"></i></span>
+                          <span style="animation-delay: 0.1s">Quiz</span>
+                      </button>
+                      <button  class="button_side" onclick="button_ranking('../html/ranking.html')" type="button">
+                          <span><i class="fa-solid fa-ranking-star fa-2xl"
+                                  style="color: #ff4655; margin-top: 20px;"></i></span>
+                          <span style="animation-delay: 0.2s">Ranking</span>
+                      </button>
+                      <button class="button_side" onclick="button_aimLab('../html/aimlab.html')" type="button">
+                          <span><i class="fa-solid fa-crosshairs fa-2xl"
+                              style="color: #ff4655; margin-top: 20px;" ></i></span>
+                          <span style="animation-delay: 0.3s">AimLab</span>
+                      </button>
+                      <button  class="button_side" onclick="button_sair('../html/login.html')" type="button">
+                          <span><i class="fa-solid fa-right-from-bracket fa-2xl"
+                                  style="color: #ff4655; margin-top: 20px;"> </i></span>
+                          <span style="animation-delay: 0.4s">Sair</span>
+                      </button>
+                  </nav>
+              </div>
+          </aside>
+          <a href="../index.html">Home</a>
+          <a href="../index.html#about">Sobre o jogo</a>
+          <a href="../index.html#agents">Conheça os Agentes</a>
+          <a href="../index.html#maps">Conheça os Mapas</a>
+      </nav>
+  </header>
+    <div class="screen">
+      <h1>Treinamento de Mira</h1>
+      <a href="#" class="start" id="start">Começar o Jogo</a>
+    </div>
+    <div class="screen">
+      <h1>Escolha o Tempo</h1>
+      <ul class="time-list" id="time-list">
+        <li>
+          <button class="time-btn" data-time="10">10 seg</button>
+        </li>
+        <li>
+          <button class="time-btn" data-time="15">15 seg</button>
+        </li>
+        <li>
+          <button class="time-btn" data-time="20">20 seg</button>
+        </li>
+        <li>
+          <button class="time-btn" data-time="30">30 seg</button>
+        </li>
+      </ul>
+    </div>
+    <div class="screen">
+      <h3>Restam <span id="time">00:00</span></h3>
+      <a href="#" class="restart"
+        ><h2 href="#" onclick="location.reload(); return false;">Reiniciar</h2>
+      </a>
+      <div class="board" id="board"></div>
+    </div>
+    <script src="../js/aimLab.js"></script>
+  </body>
+</html>
+<script type="text/javascript">
+  const toggleSidebar = () => document.body.classList.toggle("open");
+
+  function button_ranking(url) {
+      window.location.href = url;
+  }
+
+  function button_sair(url) {
+      window.location.href = url;
+  }
+
+  function button_quiz(url) {
+      window.location.href = url;
+  }
+
+  function button_dash(url) {
+      window.location.href = url;
+  }
+
+  function button_aimLab(url){
+      window.location.href = url;
+  }
+</script>
