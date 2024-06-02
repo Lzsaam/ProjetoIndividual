@@ -218,16 +218,18 @@ a:hover {
   color: var(--red-valorant);
 }
 
+
+
+
 .start {
   margin-top: 10px;
   width: 170px;
   height: 100px;
   font-size: 1.5rem;
-  background: linear-gradient(90deg red 0%, yellow 100%);
   border: 3px solid;
   border-radius: 40px;
   overflow: hidden;
-  box-shadow: 0 10px 45px rgba(172, 171, 171, 0.3);
+
 }
 
 h1 {
