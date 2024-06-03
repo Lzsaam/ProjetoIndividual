@@ -70,6 +70,8 @@ function cadastrarPontuacao(){
                     //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
     
                     console.log(resposta)
+
+                    window.location = '../html/ranking.html'
     
                     //   limparFormulario();
                     //   finalizarAguardar();
