@@ -44,7 +44,7 @@ function startGame() {
   
   createRandomCircle();
   setInterval(decreasetime, 1000);
-  moveInterval = setInterval(moveCircles, 750); 
+  moveInterval = setInterval(moveCircles, 3000); 
   setTime(time);
 }
 
